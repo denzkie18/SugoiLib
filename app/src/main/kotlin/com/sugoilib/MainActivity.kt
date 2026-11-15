@@ -1,12 +1,14 @@
 package com.sugoilib
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import androidx.lifecycle.lifecycleScope
+import com.sugoilib.utils.supabase.auth.SupabaseAuth
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,5 +23,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        checkUserExists()
+
+    }
+
+    private fun checkUserExists() {
+        lifecycleScope.launch {
+            val isLoggin = SupabaseAuth().checkUserLogin()
+            if (!isLoggin) {
+                Toast.makeText(this@MainActivity, "Not login", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
