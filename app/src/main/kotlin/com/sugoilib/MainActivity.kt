@@ -13,8 +13,6 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Android 15 and later draw the app under the system bars: this picks status bar icons
-        // that stay readable, and the padding keeps the button clear of the navigation bar.
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

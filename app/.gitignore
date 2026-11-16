@@ -1,0 +1,32 @@
+# Secrets
+app/src/main/java/com/sugoilib/data/SupabaseConfig.kt
+local.properties
+
+# Gradle
+.gradle/
+build/
+app/build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Android
+*.apk
+*.aab
+*.ap_
+*.dex
+bin/
+gen/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Signing keys
+*.jks
+*.keystore
